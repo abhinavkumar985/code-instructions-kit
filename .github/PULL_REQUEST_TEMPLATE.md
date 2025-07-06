@@ -19,7 +19,7 @@ assignees: ''
 Please ensure you have completed the following steps before submitting your pull request. This helps us review and merge your changes efficiently.
 
 ### General Checks
-- [ ] I have read the [CONTRIBUTING.md](https://github.com/abhinavkumar985/code-instructions-kit/blob/main/CONTRIBUTING.md) guidelines.
+- [ ] I have read the [CONTRIBUTING.md](../CONTRIBUTING.md) guidelines.
 - [ ] My changes are clearly described below.
 - [ ] My changes are focused on a single concern (e.g., one feature, one bug fix, one set of related documentation updates).
 
