@@ -98,7 +98,6 @@ your-project/
         └── components
 ```
 
-
 1.  **Customize and Extend**:
     - Open the copied `GEMINI.md` and the files within `.gemini-guidelines/`.
     - Modify their content to reflect your project's unique coding standards,
