@@ -1,11 +1,12 @@
-
 # SEO Best Practices
 
 Follow these guidelines to ensure all pages are optimized for search engines.
 
 ## ✅ **Instructions**
 
-1.  **Metadata API**: Use the built-in Metadata API to manage `title` and `description` for each page. Define a `metadata` object in `layout.tsx` or `page.tsx`.
+1.  **Metadata API**: Use the built-in Metadata API to manage `title` and
+    `description` for each page. Define a `metadata` object in `layout.tsx` or
+    `page.tsx`.
 
     ```typescript
     // /app/products/[id]/page.tsx
@@ -21,7 +22,8 @@ Follow these guidelines to ensure all pages are optimized for search engines.
     }
     ```
 
-2.  **Dynamic Metadata**: For dynamic pages, use the `generateMetadata` function to fetch data and create metadata.
+2.  **Dynamic Metadata**: For dynamic pages, use the `generateMetadata` function
+    to fetch data and create metadata.
 
     ```typescript
     // /app/products/[id]/page.tsx
@@ -31,7 +33,9 @@ Follow these guidelines to ensure all pages are optimized for search engines.
       params: { id: string };
     };
 
-    export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    export async function generateMetadata({
+      params,
+    }: Props): Promise<Metadata> {
       const product = await getProduct(params.id);
       return {
         title: product.name,
@@ -40,7 +44,8 @@ Follow these guidelines to ensure all pages are optimized for search engines.
     }
     ```
 
-3.  **Open Graph & Twitter**: Include Open Graph and Twitter metadata to improve social sharing.
+3.  **Open Graph & Twitter**: Include Open Graph and Twitter metadata to improve
+    social sharing.
 
     ```typescript
     export const metadata: Metadata = {
@@ -56,4 +61,5 @@ Follow these guidelines to ensure all pages are optimized for search engines.
     };
     ```
 
-4.  **`sitemap.ts`**: Create a `sitemap.ts` file in the `/app` directory to automatically generate a `sitemap.xml` file.
+4.  **`sitemap.ts`**: Create a `sitemap.ts` file in the `/app` directory to
+    automatically generate a `sitemap.xml` file.

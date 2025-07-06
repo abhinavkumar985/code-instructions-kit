@@ -1,11 +1,11 @@
-
 # Svelte Reactivity Guide
 
 Leverage Svelte's reactivity system for clean and efficient state management.
 
 ## ✅ **Instructions**
 
-1.  **Reactive Assignments**: Svelte's reactivity is triggered by assignments. To update the DOM, you must assign a new value to a variable.
+1.  **Reactive Assignments**: Svelte's reactivity is triggered by assignments.
+    To update the DOM, you must assign a new value to a variable.
 
     ```svelte
     <script>
@@ -17,7 +17,9 @@ Leverage Svelte's reactivity system for clean and efficient state management.
     </script>
     ```
 
-2.  **Reactive Statements (`$:`)**: Use the `$: ` prefix for reactive statements that depend on other reactive values. They will re-run whenever the referenced values change.
+2.  **Reactive Statements (`$:`)**: Use the `$:` prefix for reactive statements
+    that depend on other reactive values. They will re-run whenever the
+    referenced values changes.
 
     ```svelte
     <script>
@@ -28,7 +30,9 @@ Leverage Svelte's reactivity system for clean and efficient state management.
     <p>{count} * 2 = {doubled}</p>
     ```
 
-3.  **Updating Arrays and Objects**: To trigger reactivity for arrays and objects, you must assign a new value. Mutating methods like `.push()` will not work on their own.
+3.  **Updating Arrays and Objects**: To trigger reactivity for arrays and
+    objects, you must assign a new value. Mutating methods like `.push()` will
+    not work on their own.
 
     ```svelte
     <script>
@@ -44,4 +48,5 @@ Leverage Svelte's reactivity system for clean and efficient state management.
     </script>
     ```
 
-4.  **Stores for Shared State**: For state that needs to be shared between components, use Svelte stores (`writable`, `readable`, `derived`).
+4.  **Stores for Shared State**: For state that needs to be shared between
+    components, use Svelte stores (`writable`, `readable`, `derived`).

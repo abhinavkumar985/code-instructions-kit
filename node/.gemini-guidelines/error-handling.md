@@ -1,11 +1,12 @@
-
 # Error Handling
 
 Follow these guidelines for consistent and effective error handling.
 
 ## ✅ **Instructions**
 
-1.  **Centralized Error Middleware**: Use a single, centralized error-handling middleware in your Express application. This should be the last middleware added.
+1.  **Centralized Error Middleware**: Use a single, centralized error-handling
+    middleware in your Express application. This should be the last middleware
+    added.
 
     ```javascript
     // server.js
@@ -14,7 +15,8 @@ Follow these guidelines for consistent and effective error handling.
     app.use(errorHandler);
     ```
 
-2.  **Custom Error Class**: Create a custom `AppError` class to standardize operational errors.
+2.  **Custom Error Class**: Create a custom `AppError` class to standardize
+    operational errors.
 
     ```javascript
     // utils/AppError.js
@@ -30,7 +32,8 @@ Follow these guidelines for consistent and effective error handling.
     module.exports = AppError;
     ```
 
-3.  **Catching Async Errors**: Wrap your async route handlers in a `catchAsync` utility to avoid repetitive `try...catch` blocks.
+3.  **Catching Async Errors**: Wrap your async route handlers in a `catchAsync`
+    utility to avoid repetitive `try...catch` blocks.
 
     ```javascript
     // utils/catchAsync.js

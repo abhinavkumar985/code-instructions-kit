@@ -1,0 +1,38 @@
+// .markdownlint.jsonc
+{
+    // MD007: Unordered list indentation (list-marker-space)
+    // Disable this as Prettier handles list formatting and may use 2 spaces.
+    "MD007": false,
+    "list-marker-space": false,
+    // MD013: Line length
+    // Disable this for prose as Prettier's "proseWrap: always" handles wrapping,
+    // and strict line limits can make documentation hard to read.
+    "MD013": false,
+    "line-length": false,
+    "MD031": false,
+    "MD032": false,
+    // MD026: Trailing punctuation in heading
+    // This is a good rule to enforce for clean headings. We will fix these.
+    "MD026": true,
+    // MD034: Bare URL used
+    // This is a good rule to enforce for readability. We will fix these.
+    "MD034": true,
+    // MD040: Fenced code blocks should have a language specified
+    // This is important for syntax highlighting. We will fix these.
+    "MD040": true,
+    // MD041: First line in a file should be a top-level heading
+    // This is a good practice for READMEs. We will fix this.
+    "MD041": true,
+    // MD024: Multiple headings with the same content
+    // This indicates a structural issue. We will fix this.
+    "MD024": true,
+    // MD038: Spaces inside code span elements
+    // This is a formatting issue. We will fix this.
+    "MD038": true,
+    // MD047: Files should end with a single newline character
+    // Good practice, Prettier should handle this.
+    "MD047": true,
+    // MD012: Multiple blank lines
+    // Good practice, Prettier should help with this.
+    "MD012": true
+}
