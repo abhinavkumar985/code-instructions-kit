@@ -1,11 +1,12 @@
-
 # Svelte Component Structure
 
-Follow this structure for creating well-organized and maintainable Svelte components.
+Follow this structure for creating well-organized and maintainable Svelte
+components.
 
 ## ✅ **Instructions**
 
-1.  **Single-File Components**: Each component should be in its own `.svelte` file.
+1.  **Single-File Components**: Each component should be in its own `.svelte`
+    file.
 
 2.  **Order of Blocks**: Use the following order inside your `.svelte` files:
     1.  `<script lang="ts">`
@@ -21,7 +22,8 @@ Follow this structure for creating well-organized and maintainable Svelte compon
     </script>
     ```
 
-4.  **Scoped Styles**: Styles are scoped to the component by default. Write your CSS directly in the `<style>` block.
+4.  **Scoped Styles**: Styles are scoped to the component by default. Write your
+    CSS directly in the `<style>` block.
 
 5.  **Events**: Dispatch events using `createEventDispatcher`.
 

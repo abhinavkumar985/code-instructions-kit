@@ -1,0 +1,63 @@
+{
+    "name": "Main Branch Protection - Code Instructions Kit",
+    "target": "branch",
+    "enforcement": "active",
+    "conditions": {
+        "ref_name": {
+            "include": [
+                "~DEFAULT_BRANCH"
+            ]
+        }
+    },
+    "rules": [
+        {
+            "type": "pull_request",
+            "parameters": {
+                "required_approving_review_count": 1,
+                "dismiss_stale_reviews_on_push": true,
+                "require_last_push_approval": false,
+                "required_review_thread_resolution": true
+            }
+        },
+        {
+            "type": "required_status_checks",
+            "parameters": {
+                "required_status_checks": [
+                    {
+                        "context": "Markdown Lint"
+                    }
+                ],
+                "strict_required_status_checks_policy": true
+            }
+        },
+        {
+            "type": "non_fast_forward"
+        },
+        {
+            "type": "deletion"
+        },
+        {
+            "type": "commit_message_pattern",
+            "parameters": {
+                "name": "Conventional Commits",
+                "pattern": "^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\\(.+\\))?:\\s.{1,50}",
+                "negate": false
+            }
+        },
+        {
+            "type": "commit_author_email_pattern",
+            "parameters": {
+                "name": "Valid Author Email",
+                "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+                "negate": false
+            }
+        }
+    ],
+    "bypasses": [
+        {
+            "actor_id": 1,
+            "actor_type": "RepositoryRole",
+            "bypass_mode": "always"
+        }
+    ]
+}

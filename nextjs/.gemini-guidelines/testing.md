@@ -1,19 +1,20 @@
-
 # Testing Strategy
 
 Follow this testing strategy to ensure the application is reliable and bug-free.
 
 ## 🧪 **Tools**
 
--   **Jest**: For unit testing.
--   **React Testing Library**: For testing components.
--   **Cypress**: For end-to-end testing.
+- **Jest**: For unit testing.
+- **React Testing Library**: For testing components.
+- **Cypress**: For end-to-end testing.
 
 ## ✅ **Instructions**
 
-1.  **Unit Tests**: Write unit tests for individual functions and utilities in the `/lib` directory. Keep them short, focused, and fast.
+1.  **Unit Tests**: Write unit tests for individual functions and utilities in
+    the `/lib` directory. Keep them short, focused, and fast.
 
-2.  **Component Tests**: Test React components in isolation. Use React Testing Library to simulate user interactions and verify the component's behavior.
+2.  **Component Tests**: Test React components in isolation. Use React Testing
+    Library to simulate user interactions and verify the component's behavior.
 
     ```typescript
     // /components/Button.test.tsx
@@ -26,7 +27,8 @@ Follow this testing strategy to ensure the application is reliable and bug-free.
     });
     ```
 
-3.  **End-to-End (E2E) Tests**: Use Cypress to test critical user flows from start to finish. For example, a full sign-up or checkout process.
+3.  **End-to-End (E2E) Tests**: Use Cypress to test critical user flows from
+    start to finish. For example, a full sign-up or checkout process.
 
     ```javascript
     // /cypress/e2e/auth.cy.js
@@ -39,4 +41,6 @@ Follow this testing strategy to ensure the application is reliable and bug-free.
     });
     ```
 
-4.  **Test Coverage**: Aim for a reasonable level of test coverage, but prioritize testing critical paths and complex logic over simple, static components.
+4.  **Test Coverage**: Aim for a reasonable level of test coverage, but
+    prioritize testing critical paths and complex logic over simple, static
+    components.

@@ -1,12 +1,15 @@
 # Vue Composables
 
-Composables are a powerful pattern in the Vue Composition API for extracting and reusing stateful logic. Use them to keep your components clean and focused.
+Composables are a powerful pattern in the Vue Composition API for extracting and
+reusing stateful logic. Use them to keep your components clean and focused.
 
 ## ✅ **Instructions**
 
-1.  **Definition**: A composable is a function that leverages Vue's Composition API to encapsulate reusable stateful logic.
+1.  **Definition**: A composable is a function that leverages Vue's Composition
+    API to encapsulate reusable stateful logic.
 
-2.  **Naming Convention**: Name composable files and functions with the `use` prefix (e.g., `useMouse.ts`, `useCounter.ts`).
+2.  **Naming Convention**: Name composable files and functions with the `use`
+    prefix (e.g., `useMouse.ts`, `useCounter.ts`).
 
 3.  **Location**: Store composables in the `/src/composables` directory.
 
@@ -51,4 +54,6 @@ Composables are a powerful pattern in the Vue Composition API for extracting and
     </template>
     ```
 
-6.  **Purpose**: Use composables to abstract away complex logic, making components more readable and testable. They are ideal for features like form handling, API calls, or managing global state.
+6.  **Purpose**: Use composables to abstract away complex logic, making
+    components more readable and testable. They are ideal for features like form
+    handling, API calls, or managing global state.

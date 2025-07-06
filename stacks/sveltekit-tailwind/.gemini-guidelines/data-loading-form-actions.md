@@ -1,12 +1,15 @@
 # SvelteKit Data Loading & Form Actions
 
-SvelteKit provides powerful mechanisms for data loading and form handling. Use these features to build robust and efficient applications.
+SvelteKit provides powerful mechanisms for data loading and form handling. Use
+these features to build robust and efficient applications.
 
 ## ✅ **Instructions**
 
 1.  **Data Loading (`+page.ts` or `+page.server.ts`)**:
-    *   Use a `load` function in a `+page.ts` file for data that can be fetched on both the client and server.
-    *   Use a `load` function in a `+page.server.ts` file for data that *must* be fetched on the server (e.g., database access, API keys).
+    - Use a `load` function in a `+page.ts` file for data that can be fetched on
+      both the client and server.
+    - Use a `load` function in a `+page.server.ts` file for data that _must_ be
+      fetched on the server (e.g., database access, API keys).
 
     ```typescript
     // src/routes/blog/[slug]/+page.server.ts
@@ -19,8 +22,9 @@ SvelteKit provides powerful mechanisms for data loading and form handling. Use t
     ```
 
 2.  **Form Actions (`+page.server.ts`)**:
-    *   Use form actions for handling form submissions. They run on the server and provide a secure way to handle data.
-    *   Define actions in a `+page.server.ts` file.
+    - Use form actions for handling form submissions. They run on the server and
+      provide a secure way to handle data.
+    - Define actions in a `+page.server.ts` file.
 
     ```typescript
     // src/routes/contact/+page.server.ts
@@ -40,4 +44,5 @@ SvelteKit provides powerful mechanisms for data loading and form handling. Use t
     };
     ```
 
-3.  **Progressive Enhancement**: SvelteKit's form actions provide progressive enhancement out of the box. Forms will work even if JavaScript is disabled.
+3.  **Progressive Enhancement**: SvelteKit's form actions provide progressive
+    enhancement out of the box. Forms will work even if JavaScript is disabled.
