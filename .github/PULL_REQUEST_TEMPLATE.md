@@ -2,6 +2,13 @@
 name: Pull Request
 about: Propose changes to the Code Instructions Kit
 title: "[TYPE]: Short description of changes"
+<!--
+Thank you for contributing! Please prefix your PR title with one of the following:
+- [DOCS] for documentation changes
+- [FEAT] for new features or guidelines
+- [FIX] for bug fixes
+- [CHORE] for maintenance tasks (e.g., updating templates)
+-->
 labels: ''
 assignees: ''
 
@@ -12,7 +19,7 @@ assignees: ''
 Please ensure you have completed the following steps before submitting your pull request. This helps us review and merge your changes efficiently.
 
 ### General Checks
-- [ ] I have read the [CONTRIBUTING.md](https://github.com/abhinavkumar985/code-instructions-kit/blob/main/CONTRIBUTING.md) guidelines.
+- [ ] I have read the [CONTRIBUTING.md](../CONTRIBUTING.md) guidelines.
 - [ ] My changes are clearly described below.
 - [ ] My changes are focused on a single concern (e.g., one feature, one bug fix, one set of related documentation updates).
 
