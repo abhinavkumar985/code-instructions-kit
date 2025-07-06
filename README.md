@@ -88,13 +88,16 @@ guidelines:
 
     _Example Structure in Your Project Root:_
 
-    ```your-project/
+```
+your-project/
 ├── GEMINI.md
 ├── .gemini-guidelines/
 │   ├── overview.md
 │   └── component-design.md
 └── src/
-        └── ...```
+        └── components
+```
+
 
 1.  **Customize and Extend**:
     - Open the copied `GEMINI.md` and the files within `.gemini-guidelines/`.
