@@ -1,79 +1,46 @@
-# Accessibility Guidelines ♿️
+# Accessibility Instructions ♿️
 
-Building accessible web applications is essential to ensure everyone, including users with disabilities, can effectively use your product. These guidelines outline best practices and standards to help create inclusive, usable, and compliant frontend experiences.
-
----
-
-## 1. Semantic HTML
-
-- Use native HTML elements appropriately (e.g., `<button>`, `<nav>`, `<main>`, `<header>`, `<form>`) to leverage built-in accessibility.
-- Avoid using `<div>` or `<span>` for interactive elements without proper ARIA roles.
-- Structure content logically with headings (`<h1>`–`<h6>`) to provide clear document hierarchy.
+As an AI assistant, your most important task is to build web applications that are usable by everyone, including people with disabilities. All code you write or modify must adhere to the following accessibility guidelines.
 
 ---
 
-## 2. ARIA Roles & Attributes
+## ✅ **Core Instructions for AI**
 
-- Use ARIA (Accessible Rich Internet Applications) roles and properties **only when native HTML is insufficient**.
-- Keep ARIA roles simple and correct to avoid confusing assistive technologies.
-- Manage `aria-live`, `aria-hidden`, and `aria-expanded` states to communicate dynamic content changes.
+When generating or refactoring any component, page, or code snippet, you **MUST** ensure the following:
 
----
+1.  **Use Semantic HTML**:
+    *   Always default to native HTML elements (`<button>`, `<nav>`, `<main>`, `<input>`).
+    *   Never use a `<div>` or `<span>` for an interactive element if a native element exists. If you must, add the appropriate `role` (e.g., `role="button"`) and keyboard event handlers.
+    *   Structure content logically with headings (`<h1>`–`<h6>`).
 
-## 3. Keyboard Navigation
+2.  **Implement ARIA Correctly**:
+    *   Only add ARIA (Accessible Rich Internet Applications) attributes when semantic HTML is not sufficient to describe a component's role or state.
+    *   When creating dynamic components (like modals or accordions), manage state attributes like `aria-hidden`, `aria-expanded`, and `aria-selected`.
+    *   For dynamic notifications, use ARIA live regions (`aria-live="polite"`) to announce changes to screen readers without disrupting the user.
 
-- Ensure all interactive elements are reachable and operable with keyboard (Tab, Enter, Space, Arrow keys).
-- Maintain a logical tab order matching the visual layout.
-- Use focus styles (e.g., `:focus-visible`) that are visible and clear for keyboard users.
-- Avoid keyboard traps by ensuring focus can move freely within modals or dialogs.
+3.  **Ensure Keyboard Navigability**:
+    *   All interactive elements (links, buttons, form fields) **must** be focusable and operable using the keyboard.
+    *   The tab order must be logical and follow the visual flow of the page.
+    *   Implement a highly visible focus style (e.g., using `:focus-visible`) for all interactive elements.
 
----
+4.  **Prioritize Readability & Contrast**:
+    *   When applying colors (e.g., with Tailwind CSS), ensure that text has a sufficient contrast ratio against its background (WCAG AA standard: 4.5:1).
+    *   Do not use color as the only way to convey information. Supplement it with text, icons, or other visual cues.
 
-## 4. Color & Contrast
+5.  **Make Images & Media Accessible**:
+    *   Every `<img>` tag must have an `alt` attribute.
+    *   If the image conveys information, the `alt` text must be descriptive.
+    *   If the image is purely decorative, use an empty `alt=""`.
 
-- Use sufficient contrast between text and background to meet WCAG AA standards (minimum contrast ratio 4.5:1 for normal text).
-- Avoid conveying information using color alone; supplement with text or icons.
-- Consider users with color blindness by using patterns, shapes, or text labels.
+6.  **Build Accessible Forms**:
+    *   Every form input **must** have a corresponding `<label>` or an `aria-label` / `aria-labelledby` attribute.
+    *   Provide clear, accessible error messages when validation fails. Associate the error message with the input using `aria-describedby`.
 
----
-
-## 5. Images & Media
-
-- Provide descriptive `alt` text for images that convey information or function.
-- For decorative images, use empty `alt=""` to avoid distracting screen readers.
-- Caption videos and provide transcripts for audio content.
-- Avoid auto-playing media or provide clear controls to pause/stop.
-
----
-
-## 6. Forms & Inputs
-
-- Label all form controls clearly using `<label>` or `aria-label`.
-- Provide error messages and instructions accessible to screen readers.
-- Use fieldsets and legends for grouped form elements.
-- Ensure form controls have appropriate keyboard focus and state feedback.
-
----
-
-## 7. Dynamic Content & Announcements
-
-- Use ARIA live regions (`aria-live`) to notify users of important dynamic changes.
-- Ensure updates don’t disrupt the user experience or keyboard focus.
-- Test dynamic widgets like modals, dropdowns, accordions for accessibility.
-
----
-
-## 8. Testing & Validation
-
-- Regularly test with screen readers (NVDA, VoiceOver), keyboard-only navigation, and other assistive technologies.
-- Use automated accessibility testing tools (axe, Lighthouse, pa11y) to catch common issues.
-- Conduct manual audits and user testing with people who have disabilities.
+7.  **Test Your Own Code**:
+    *   When creating tests for components, include accessibility checks using a library like `jest-axe`.
 
 ---
 
 ## Summary
 
-Accessibility is a fundamental part of frontend development. Writing semantic, keyboard-friendly, and screen reader compatible code improves UX for all users and meets legal and ethical standards.
-
-> Build inclusively from the start to create products that everyone can enjoy.
-
+Accessibility is a non-negotiable requirement. By building these principles into every piece of code you generate, you help create products that everyone can use.

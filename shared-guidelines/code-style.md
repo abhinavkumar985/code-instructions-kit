@@ -1,65 +1,40 @@
-# Code Style Guidelines 🧹
+# Code Style Instructions 🧹
 
-Consistent code style is crucial for readability, maintainability, and collaboration in any project. This document outlines the recommended code style conventions to follow across all frontend projects.
-
----
-
-## 1. Formatting & Indentation
-
-- Use **2 spaces** per indentation level (no tabs).
-- Keep line length under **80-100 characters** where possible.
-- Use trailing commas in multiline objects and arrays.
-- Always include semicolons to avoid automatic semicolon insertion pitfalls.
+As an AI assistant, you must adhere to the following code style guidelines to ensure consistency, readability, and maintainability across the entire project. These rules are not optional.
 
 ---
 
-## 2. Naming Conventions
+## ✅ **Core Instructions for AI**
 
-- Use **camelCase** for variables and functions.
-- Use **PascalCase** for React/Vue components and classes.
-- File names should be **kebab-case** or **PascalCase**, but be consistent within your project.
-- Constants (environment variables, config values) in **UPPER_SNAKE_CASE**.
+1.  **Formatting (Handled by Prettier)**:
+    *   You don't need to worry about most formatting rules, as **Prettier** will handle them automatically. However, your generated code should be clean and readable before formatting.
+    *   **Key Rules**: 2-space indentation, trailing commas, and semicolons at the end of statements.
 
----
+2.  **Naming Conventions**:
+    *   **Variables & Functions**: `camelCase`
+    *   **Components & Classes**: `PascalCase` (e.g., `UserProfile`, `class DataProcessor`)
+    *   **Files**: `kebab-case` for general files (`api-helpers.ts`), `PascalCase` for component files (`UserProfile.tsx`).
+    *   **Constants**: `UPPER_SNAKE_CASE` for static, unchanging values (e.g., `const API_KEY = '...'`).
 
-## 3. JavaScript / TypeScript
+3.  **JavaScript / TypeScript Best Practices**:
+    *   **Always** use `const` by default. Only use `let` if a variable must be reassigned.
+    *   **Never** use `var`.
+    *   **Always** use arrow functions (`=>`) for callbacks and anonymous functions.
+    *   In TypeScript, provide explicit types for function parameters and return values unless the inferred type is trivial and obvious.
+    *   Utilize modern JavaScript features: destructuring, optional chaining (`?.`), and nullish coalescing (`??`).
 
-- Prefer **const** by default, use **let** only if variable reassignments needed.
-- Avoid using **var**.
-- Use **arrow functions** for anonymous functions and callbacks.
-- Use **explicit return types** in TypeScript whenever possible.
-- Use modern ES6+ features such as destructuring, template literals, and optional chaining.
+4.  **Styling (CSS)**:
+    *   **Prioritize utility-first classes** (Tailwind CSS) for all styling.
+    *   **Avoid inline styles** (`style="..."`) unless the style is dynamic and cannot be achieved with classes.
+    *   **Do not write custom CSS files** unless absolutely necessary for a complex, non-reusable component. If you must, keep selectors simple.
 
----
-
-## 4. CSS / Styling
-
-- Prefer **BEM** or utility-first (Tailwind) class naming conventions.
-- Use CSS variables for theme colors and reusable values.
-- Avoid inline styles unless dynamically necessary.
-- Keep selectors simple and avoid deeply nested rules.
-
----
-
-## 5. Comments & Documentation
-
-- Write clear, concise comments where logic is complex.
-- Use JSDoc/TSDoc style for functions and modules.
-- Remove commented-out or dead code before commits.
+5.  **Comments**:
+    *   Do not add comments that explain *what* the code is doing. The code should be self-explanatory.
+    *   Only add comments to explain *why* a piece of complex or non-obvious logic exists.
+    *   **Never** leave commented-out code in your final output.
 
 ---
 
-## 6. Code Reviews & Linting
+## Summary
 
-- Use **ESLint** with your preferred config (Airbnb, Standard, etc.).
-- Configure **Prettier** for automated formatting.
-- Fix linting issues before submitting PRs.
-- Code reviews should verify adherence to these style guidelines.
-
----
-
-## 7. Accessibility & Best Practices
-
-- Follow semantic HTML and ARIA practices.
-- Ensure components and UI elements are keyboard and screen reader friendly.
-- Use descriptive variable and function names to improve clarity.
+Following these rules is mandatory. Your adherence to this style guide ensures the project remains clean and easy for human developers to maintain.

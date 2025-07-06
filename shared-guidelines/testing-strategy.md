@@ -1,74 +1,47 @@
-# Testing Strategy 🧪
+# Testing Instructions 🧪
 
-Writing effective tests is essential for delivering reliable, maintainable, and high-quality frontend applications. This document outlines the recommended testing practices and strategies to follow across projects, ensuring consistency and confidence in your code.
-
----
-
-## 1. Types of Tests to Write
-
-- **Unit Tests**: Test individual functions, utilities, and components in isolation.
-- **Integration Tests**: Verify the interaction between components and services.
-- **End-to-End (E2E) Tests**: Simulate user flows and verify the app works as expected from start to finish.
+As an AI assistant, you are required to write effective tests for the code you generate. A well-tested codebase is reliable and easy to maintain. Follow these instructions whenever you are asked to create or modify tests.
 
 ---
 
-## 2. Testing Tools & Frameworks
+## ✅ **Core Instructions for AI**
 
-- Use **Jest** as the default test runner and assertion library.
-- For React, use **React Testing Library** to test components focusing on user behavior.
-- For Vue, use **Vue Test Utils** combined with Jest.
-- Use **Cypress** or **Playwright** for E2E tests.
-- Use **Mock Service Worker (MSW)** to mock APIs during tests.
+1.  **Testing Philosophy: Test User Behavior, Not Implementation Details**:
+    *   Your primary goal is to write tests that simulate how a user interacts with the application.
+    *   **Do not** test internal component state or private methods.
+    *   **Do** test that the correct UI is displayed, that buttons can be clicked, and that data is handled as the user would expect.
 
----
+2.  **What to Test**:
+    *   **Unit Tests**: Write unit tests for pure business logic, utility functions, and complex algorithms. These should be fast and have no external dependencies.
+    *   **Component/Integration Tests**: This is your main focus. For a UI component, you must test:
+        *   It renders correctly with different props.
+        *   It handles user interactions (e.g., clicks, input changes) correctly.
+        *   It is fully accessible (use `jest-axe` to verify).
+    *   **E2E Tests**: For critical user flows (e.g., login, checkout), write E2E tests using Cypress or Playwright that simulate a complete user journey.
 
-## 3. Writing Tests
+3.  **How to Write Tests**:
+    *   Use the testing libraries established in the project (e.g., **Jest** with **React Testing Library** or **Vue Test Utils**).
+    *   Query the DOM as a user would: use accessible queries like `getByRole`, `getByLabelText`, or `getByText`.
+    *   Mock all external dependencies, especially API calls. Use **Mock Service Worker (MSW)** to intercept network requests and provide consistent mock data.
+    *   Write clear, descriptive test names using the `it should...` format (e.g., `it should render a disabled button when isLoading is true`).
 
-- Write tests in **TypeScript** where applicable to catch type errors early.
-- Follow the same **code style** guidelines as production code (indentation, naming, comments).
-- Test only **public API** of modules and components; avoid testing implementation details.
-- Name test files using `.test.ts` or `.spec.ts` suffix.
-- Group related tests with `describe()` blocks for clarity.
-- Use clear, descriptive test names explaining the expected behavior.
+4.  **Accessibility Testing**:
+    *   For every component test, you **must** include an accessibility check using `jest-axe`.
 
----
+    ```typescript
+    import { render } from '@testing-library/react';
+    import { axe } from 'jest-axe';
+    import MyComponent from './MyComponent';
 
-## 4. Coverage & Quality
-
-- Aim for high test coverage but focus on **meaningful coverage**, not just numbers.
-- Prioritize tests for critical business logic, complex components, and edge cases.
-- Avoid brittle tests that rely on implementation details or DOM structure that frequently changes.
-- Use coverage reports to identify untested parts of the code.
-
----
-
-## 5. Test Automation & CI
-
-- Run tests automatically on every pull request using Continuous Integration (CI).
-- Fail builds if critical tests fail or coverage drops below a set threshold.
-- Use linting and formatting tools (ESLint, Prettier) to ensure test code quality.
-- Review test failures promptly and keep tests reliable.
-
----
-
-## 6. Mocking & Isolation
-
-- Mock external dependencies (API calls, timers, analytics) to keep tests deterministic.
-- Use dependency injection or mocking libraries to isolate the code under test.
-- Avoid global state or shared mutable state between tests to prevent flaky tests.
-
----
-
-## 7. Accessibility Testing
-
-- Include accessibility checks as part of your test strategy.
-- Use tools like **axe-core** or **jest-axe** to catch common accessibility issues in components.
-- Test keyboard navigation and screen reader behavior where applicable.
+    it('should have no accessibility violations', async () => {
+      const { container } = render(<MyComponent />);
+      const results = await axe(container);
+      expect(results).toHaveNoViolations();
+    });
+    ```
 
 ---
 
 ## Summary
 
-Consistent, well-structured testing improves developer confidence and user experience. Writing maintainable tests that follow established style and naming conventions ensures your codebase stays healthy and easy to evolve.
-
-> Invest time in tests early to save debugging and troubleshooting time later.
+Writing good tests is as important as writing the feature code itself. Your tests must be meaningful, robust, and focused on providing confidence that the application works for our users.
