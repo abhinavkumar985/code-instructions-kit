@@ -8,6 +8,7 @@
     // Disable this for prose as Prettier's "proseWrap: always" handles wrapping,
     // and strict line limits can make documentation hard to read.
     "MD013": false,
+    "MD040": false,
     "line-length": false,
     "MD031": false,
     "MD032": false,
@@ -17,9 +18,6 @@
     // MD034: Bare URL used
     // This is a good rule to enforce for readability. We will fix these.
     "MD034": true,
-    // MD040: Fenced code blocks should have a language specified
-    // This is important for syntax highlighting. We will fix these.
-    "MD040": true,
     // MD041: First line in a file should be a top-level heading
     // This is a good practice for READMEs. We will fix this.
     "MD041": true,
