@@ -2,6 +2,13 @@
 name: Pull Request
 about: Propose changes to the Code Instructions Kit
 title: "[TYPE]: Short description of changes"
+<!--
+Thank you for contributing! Please prefix your PR title with one of the following:
+- [DOCS] for documentation changes
+- [FEAT] for new features or guidelines
+- [FIX] for bug fixes
+- [CHORE] for maintenance tasks (e.g., updating templates)
+-->
 labels: ''
 assignees: ''
 
