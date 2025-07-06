@@ -16,7 +16,5 @@ jobs:
         run: npm install -g markdownlint-cli2
 
       - name: Run markdownlint
-        run: markdownlint-cli2 --config .markdownlint.jsonc "**/*.md" "#node_modules" "#.git
-        # You can add a configuration file for markdownlint-cli2 if needed,
-        # e.g., .markdownlint.jsonc at the root of your repo.
-        # Example: markdownlint-cli2 --config .markdownlint.jsonc "**/*.md"
+        # FIX: Changed exclusion patterns from '#' to '!'
+        run: markdownlint-cli2 --config .markdownlint.jsonc "**/*.md" "!node_modules" "!.git"
